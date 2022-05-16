@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import  {getCartItem, getUserItems, getCartItems, createCartItem, updateCartItem, deleteProduct } from '../controllers/cartController.js';
+import  {getCartItem, getUserItems, getCartItems, createCartItem, updateCartItem, deleteProduct } from '../Controllers/cartController.js';
 
 router.get('/', getCartItems);
 router.get('/:id', getCartItem);
