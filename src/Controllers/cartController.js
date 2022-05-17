@@ -1,13 +1,16 @@
 import Cart from "../Models/CartModel.js";
-
+import User from "../Models/UserModel.js"
+import Product from "../Models/ProductsModel.js"
 //get all cart items
 export const getCartItems = (async(req, res)=>{
     try {
         const items = await Cart.find({}).populate({
             path: "customer",
+            model: "User"
           })
           .populate({
-              path: "item"
+              path: "item",
+              model: "Product"
           });
         return res.status(200).send(items);
     } catch (error) {
